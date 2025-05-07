@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramiro Sousa | Analista de Suporte e Redes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e3a8a 0%, #111827 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .skill-bar {
+            height: 8px;
+            border-radius: 4px;
+            background: #e5e7eb;
+            overflow: hidden;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            border-radius: 4px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            transition: width 1s ease-in-out;
+        }
+        
+        .project-card {
+            perspective: 1000px;
+        }
+        
+        .project-inner {
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        
+        .project-card:hover .project-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .project-front, .project-back {
+            backface-visibility: hidden;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .project-back {
+            transform: rotateY(180deg);
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            border-right: .15em solid #3b82f6;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: 
+                typing 3.5s steps(21, end),
+                blink-caret .75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #3b82f6; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-sm z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold gradient-text">Ramiro Sousa</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-blue-600 transition">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-blue-600 transition">Sobre</a>
+                    <a href="#skills" class="text-gray-700 hover:text-blue-600 transition">Skills</a>
+                    <a href="#projects" class="text-gray-700 hover:text-blue-600 transition">Projetos</a>
+                    <a href="#contact" class="text-gray-700 hover:text-blue-600 transition">Contato</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-gray-700">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-2 px-4 shadow-lg">
+            <a href="#home" class="block py-2 text-gray-700 hover:text-blue-600 transition">Home</a>
+            <a href="#about" class="block py-2 text-gray-700 hover:text-blue-600 transition">Sobre</a>
+            <a href="#skills" class="block py-2 text-gray-700 hover:text-blue-600 transition">Skills</a>
+            <a href="#projects" class="block py-2 text-gray-700 hover:text-blue-600 transition">Projetos</a>
+            <a href="#contact" class="block py-2 text-gray-700 hover:text-blue-600 transition">Contatos</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient pt-24 pb-20 md:pt-32 md:pb-28 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+                        Oi, Eu sou <span class="gradient-text">Ramiro Sousa</span>
+                    </h1>
+                    <div class="typewriter text-2xl md:text-3xl mb-6">
+                        Analista de Suporte e Redes
+                    </div>
+                    <p class="text-lg md:text-xl text-gray-300 mb-8">
+                        Com mais de 10 anos com suporte técnico e redes, sou apaixonado por resolver problemas.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition">
+                            Contace me
+                        </a>
+                        <a href="#projects" class="border border-blue-600 text-blue-400 hover:bg-blue-600 hover:text-white px-6 py-3 rounded-lg font-medium transition">
+                            Ver trabalhos       
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative w-64 h-64 md:w-80 md:h-80">
+                        <div class="absolute inset-0 bg-blue-500 rounded-full opacity-20 blur-xl"></div>
+                        <img src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Developer" 
+                             class="relative w-full h-full rounded-full object-cover border-4 border-blue-500 floating">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Sobre <span class="gradient-text">mim</span></h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-10 md:mb-0 flex justify-center">
+                    <div class="relative w-64 h-64">
+                        <div class="absolute -inset-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg blur opacity-75"></div>
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" 
+                             alt="About Me" 
+                             class="relative w-full h-full rounded-lg object-cover">
+                    </div>
+                </div>
+                <div class="md:w-2/3 md:pl-12">
+                    <h3 class="text-2xl font-bold mb-6">Quem sou eu?</h3>
+                    <p class="text-gray-700 mb-6">
+                        Profissional com mais de 10 anos de experiência em Suporte de TI e Redes de Computadores.
+                        Especialista em infraestrutura de rede, manutenção de sistemas, segurança da informação e tecnologias em nuvem.
+                        Participante ativo do comitê público do IDCiber e ANETI, em constante aprendizado.
+                    </p>
+                    <p class="text-gray-700 mb-6">
+                        Apaixonado por tecnologia, tenho buscado expandir meus conhecimentos em áreas complementares como automação com Python, inteligência artificial e desenvolvimento Front-End com foco em interfaces modernas e responsivas. Acredito na importância de unir a base sólida da infraestrutura de redes com as tendências tecnológicas emergentes para oferecer soluções completas e inovadoras.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-center">
+                            <i class="fas fa-user-tie text-blue-500 mr-3"></i>
+                            <span class="text-gray-700"><strong>Name:</strong> Ramiro Sousa</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-blue-500 mr-3"></i>
+                            <span class="text-gray-700"><strong>Email:</strong> mirosk8@hotmail.com</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-blue-500 mr-3"></i>
+                            <span class="text-gray-700"><strong>Localização:</strong> Teresina-PI</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-briefcase text-blue-500 mr-3"></i>
+                            <span class="text-gray-700"><strong>Experiencia:</strong> 10+ Anos</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium transition flex items-center">
+                            <i class="fas fa-download mr-2"></i> Download CV
+                        </a>
+                        <a href="#contact" class="border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-6 py-2 rounded-lg font-medium transition flex items-center">
+                            <i class="fas fa-paper-plane mr-2"></i> Me contate
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Minhas <span class="gradient-text">Skills</span></h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Technical Skills -->
+                <div class="bg-white p-8 rounded-xl shadow-md card-hover">
+                    <h3 class="text-2xl font-bold mb-6 flex items-center">
+                        <i class="fas fa-code text-blue-500 mr-3"></i> Skills Tecnicas
+                    </h3>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Redes/Wifi</span>
+                                <span class="text-gray-600">60%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 60%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Suporte/Segurança</span>
+                                <span class="text-gray-600">40%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 40%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Python</span>
+                                <span class="text-gray-600">20%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 20%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">HTML/CSS</span>
+                                <span class="text-gray-600">20%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 20%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">AWS/Cloud</span>
+                                <span class="text-gray-600">20%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 20%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Professional Skills -->
+                <div class="bg-white p-8 rounded-xl shadow-md card-hover">
+                    <h3 class="text-2xl font-bold mb-6 flex items-center">
+                        <i class="fas fa-chart-line text-purple-500 mr-3"></i> Habilidades Profissionais
+                    </h3>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Resolução de problemas</span>
+                                <span class="text-gray-600">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Colaboração em Equipe</span>
+                                <span class="text-gray-600">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Comunicação</span>
+                                <span class="text-gray-600">80%</span>
+                            </div>  
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Gerenciamento de Projetos</span>
+                                <span class="text-gray-600">65%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 65%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Desenvolvimento Agil</span>
+                                <span class="text-gray-600">30%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 30%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tech Stack -->
+        <div class="mt-16">
+  <h3 class="text-2xl font-bold mb-8 text-center">My Tech Stack</h3>
+  <div class="flex flex-wrap justify-center gap-6">
+    
+    <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm w-24 h-24 card-hover">
+      <i class="fas fa-network-wired text-blue-600 text-4xl mb-2"></i>
+      <span class="text-sm">Redes</span>
+    </div>
+    
+    <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm w-24 h-24 card-hover">
+      <i class="fas fa-wifi text-blue-400 text-4xl mb-2"></i>
+      <span class="text-sm">Wi-Fi</span>
+    </div>
+    
+    <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm w-24 h-24 card-hover">
+      <i class="fas fa-tools text-gray-700 text-4xl mb-2"></i>
+      <span class="text-sm">Suporte</span>
+    </div>
+    
+    <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm w-24 h-24 card-hover">
+      <i class="fas fa-shield-alt text-red-500 text-4xl mb-2"></i>
+      <span class="text-sm">Segurança</span>
+    </div>
+    
+    <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm w-24 h-24 card-hover">
+      <i class="fab fa-html5 text-orange-600 text-4xl mb-2"></i>
+      <span class="text-sm">HTML</span>
+    </div>
+    
+    <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm w-24 h-24 card-hover">
+      <i class="fab fa-css3-alt text-blue-500 text-4xl mb-2"></i>
+      <span class="text-sm">CSS</span>
+    </div>
+    
+    <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm w-24 h-24 card-hover">
+      <i class="fab fa-python text-blue-700 text-4xl mb-2"></i>
+      <span class="text-sm">Python</span>
+    </div>
+    
+    <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm w-24 h-24 card-hover">
+      <i class="fab fa-aws text-orange-500 text-4xl mb-2"></i>
+      <span class="text-sm">AWS</span>
+    </div>
+    
+    <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm w-24 h-24 card-hover">
+      <i class="fas fa-robot text-purple-600 text-4xl mb-2"></i>
+      <span class="text-sm">AI</span>
+    </div>
+    
+    <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm w-24 h-24 card-hover">
+      <i class="fas fa-paint-brush text-pink-500 text-4xl mb-2"></i>
+      <span class="text-sm">CorelDRAW / Designer</span>
+    </div>
+    
+   
+
+  </div>
+</div>
+
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">My <span class="gradient-text">Projects</span></h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card h-80 relative">
+                    <div class="project-inner h-full w-full rounded-xl shadow-md">
+                        <div class="project-front bg-gray-50 p-6 rounded-xl h-full flex flex-col">
+                            <div class="bg-blue-100 w-16 h-16 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fas fa-shopping-cart text-blue-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">E-Commerce Platform</h3>
+                            <p class="text-gray-600 mb-4">A full-featured online store with payment integration and admin dashboard.</p>
+                            <div class="mt-auto flex flex-wrap gap-2">
+                                <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">React</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Node.js</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">MongoDB</span>
+                            </div>
+                        </div>
+                        <div class="project-back bg-gradient-to-br from-blue-600 to-purple-600 p-6 rounded-xl h-full flex flex-col justify-center items-center text-white">
+                            <h3 class="text-xl font-bold mb-4 text-center">E-Commerce Platform</h3>
+                            <p class="text-center mb-6">Built with MERN stack, Stripe integration, and real-time inventory management.</p>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-white text-blue-600 px-4 py-2 rounded-lg font-medium">Live Demo</a>
+                                <a href="#" class="border border-white text-white px-4 py-2 rounded-lg font-medium">Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card h-80 relative">
+                    <div class="project-inner h-full w-full rounded-xl shadow-md">
+                        <div class="project-front bg-gray-50 p-6 rounded-xl h-full flex flex-col">
+                            <div class="bg-purple-100 w-16 h-16 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fas fa-video text-purple-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Video Streaming Service</h3>
+                            <p class="text-gray-600 mb-4">Netflix-like platform with content recommendation engine.</p>
+                            <div class="mt-auto flex flex-wrap gap-2">
+                                <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Next.js</span>
+                                <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Node.js</span>
+                                <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">AWS</span>
+                            </div>
+                        </div>
+                        <div class="project-back bg-gradient-to-br from-purple-600 to-pink-600 p-6 rounded-xl h-full flex flex-col justify-center items-center text-white">
+                            <h3 class="text-xl font-bold mb-4 text-center">Video Streaming Service</h3>
+                            <p class="text-center mb-6">Implemented adaptive bitrate streaming, user profiles, and ML-based recommendations.</p>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-white text-purple-600 px-4 py-2 rounded-lg font-medium">Live Demo</a>
+                                <a href="#" class="border border-white text-white px-4 py-2 rounded-lg font-medium">Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card h-80 relative">
+                    <div class="project-inner h-full w-full rounded-xl shadow-md">
+                        <div class="project-front bg-gray-50 p-6 rounded-xl h-full flex flex-col">
+                            <div class="bg-green-100 w-16 h-16 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fas fa-chart-line text-green-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Analytics Dashboard</h3>
+                            <p class="text-gray-600 mb-4">Real-time business intelligence tool with customizable reports.</p>
+                            <div class="mt-auto flex flex-wrap gap-2">
+                                <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">React</span>
+                                <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">D3.js</span>
+                                <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">PostgreSQL</span>
+                            </div>
+                        </div>
+                        <div class="project-back bg-gradient-to-br from-green-600 to-teal-600 p-6 rounded-xl h-full flex flex-col justify-center items-center text-white">
+                            <h3 class="text-xl font-bold mb-4 text-center">Analytics Dashboard</h3>
+                            <p class="text-center mb-6">Interactive data visualization with real-time updates and export capabilities.</p>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-white text-green-600 px-4 py-2 rounded-lg font-medium">Live Demo</a>
+                                <a href="#" class="border border-white text-white px-4 py-2 rounded-lg font-medium">Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 transition">
+                    View All Projects
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Work <span class="gradient-text">Experience</span></h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
+            </div>
+            
+            <div class="relative">
+                <!-- Timeline bar -->
+                <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 to-purple-500 transform -translate-x-1/2"></div>
+                
+                <!-- Experience 1 -->
+                <div class="flex flex-col md:flex-row mb-12">
+                    <div class="md:w-1/2 md:pr-12 mb-6 md:mb-0 text-right">
+                        <h3 class="text-xl font-bold">Senior Full-Stack Developer</h3>
+                        <p class="text-blue-600">TechSolutions Inc.</p>
+                        <p class="text-gray-500">Jan 2021 - Present</p>
+                    </div>
+                    <div class="hidden md:flex md:w-1/12 justify-center items-start">
+                        <div class="w-6 h-6 rounded-full bg-blue-500 border-4 border-white shadow-md"></div>
+                    </div>
+                    <div class="md:w-1/2 md:pl-12">
+                        <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+                            <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                                <li>Led a team of 5 developers to build a SaaS platform serving 50,000+ users</li>
+                                <li>Architected and implemented microservices using Node.js and Docker</li>
+                                <li>Improved application performance by 40% through code optimization</li>
+                                <li>Mentored junior developers and conducted code reviews</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Experience 2 -->
+                <div class="flex flex-col md:flex-row mb-12">
+                    <div class="md:w-1/2 md:pr-12 order-last md:order-first">
+                        <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+                            <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                                <li>Developed and maintained 3 React applications with 100,000+ monthly users</li>
+                                <li>Implemented CI/CD pipelines reducing deployment time by 60%</li>
+                                <li>Designed RESTful APIs handling 500+ requests per second</li>
+                                <li>Collaborated with UX team to improve customer satisfaction by 25%</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="hidden md:flex md:w-1/12 justify-center items-start order-none">
+                        <div class="w-6 h-6 rounded-full bg-purple-500 border-4 border-white shadow-md"></div>
+                    </div>
+                    <div class="md:w-1/2 md:pl-12 mb-6 md:mb-0 text-left order-first md:order-last">
+                        <h3 class="text-xl font-bold">Full-Stack Developer</h3>
+                        <p class="text-purple-600">Digital Innovations LLC</p>
+                        <p class="text-gray-500">Mar 2018 - Dec 2020</p>
+                    </div>
+                </div>
+                
+                <!-- Experience 3 -->
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/2 md:pr-12 mb-6 md:mb-0 text-right">
+                        <h3 class="text-xl font-bold">Junior Web Developer</h3>
+                        <p class="text-blue-600">WebCraft Studios</p>
+                        <p class="text-gray-500">Jun 2016 - Feb 2018</p>
+                    </div>
+                    <div class="hidden md:flex md:w-1/12 justify-center items-start">
+                        <div class="w-6 h-6 rounded-full bg-blue-500 border-4 border-white shadow-md"></div>
+                    </div>
+                    <div class="md:w-1/2 md:pl-12">
+                        <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+                            <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                                <li>Built and maintained 15+ client websites using WordPress and custom solutions</li>
+                                <li>Developed internal tools that reduced development time by 30%</li>
+                                <li>Assisted in migrating legacy systems to modern JavaScript frameworks</li>
+                                <li>Participated in all phases of the software development lifecycle</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Entre em <span class="gradient-text">Contato</span></h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-bold mb-6">Tem uma ideia? Vamos dar vida a ela!</h3>
+                    <p class="text-gray-700 mb-8">
+                        Entre em contato caso tenha alguma dúvida ou oportunidade. Estou sempre aberto a discutir novos projetos, ideias criativas ou oportunidades de fazer parte da sua visão.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-lg mr-4">
+                                <i class="fas fa-envelope text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Email</h4>
+                                <p class="text-gray-600">mirosk8@hotmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-purple-100 p-3 rounded-lg mr-4">
+                                <i class="fas fa-phone-alt text-purple-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Telefone</h4>
+                                <p class="text-gray-600">86 9 9571-2275</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-green-100 p-3 rounded-lg mr-4">
+                                <i class="fas fa-map-marker-alt text-green-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Localização</h4>
+                                <p class="text-gray-600">Teresina-PI</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-10">
+                        <h4 class="font-bold text-gray-800 mb-4">Follow Me</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://www.linkedin.com/in/ramirosousa/" class="bg-gray-100 hover:bg-blue-600 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition">
+                                <i class="fab fa-linkedin-in text-blue-600 hover:text-white"></i>
+                            </a>
+                            <a href="https://github.com/RamiroSousa" class="bg-gray-100 hover:bg-gray-800 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition">
+                                <i class="fab fa-github text-gray-800 hover:text-white"></i>
+                            </a>
+                            <a href="https://www.instagram.com/ramiro_bir_network/" class="bg-gray-100 hover:bg-blue-400 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition">
+                                <i class="fab fa-instagram text-blue-400 hover:text-white"></i>
+                            </a>
+                        
+</html>
