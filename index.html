@@ -6,9 +6,9 @@
     <title>Ramiro Sousa | Analista de Suporte e Redes</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"></noscript>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-        
         body {
             font-family: 'Poppins', sans-serif;
             scroll-behavior: smooth;
@@ -27,6 +27,7 @@
         
         .card-hover {
             transition: all 0.3s ease;
+            will-change: transform;
         }
         
         .card-hover:hover {
@@ -46,6 +47,7 @@
             border-radius: 4px;
             background: linear-gradient(90deg, #3b82f6, #8b5cf6);
             transition: width 1s ease-in-out;
+            will-change: width;
         }
         
         .project-card {
@@ -55,6 +57,7 @@
         .project-inner {
             transition: transform 0.6s;
             transform-style: preserve-3d;
+            will-change: transform;
         }
         
         .project-card:hover .project-inner {
@@ -74,6 +77,7 @@
         
         .floating {
             animation: floating 3s ease-in-out infinite;
+            will-change: transform;
         }
         
         @keyframes floating {
@@ -104,6 +108,7 @@
         }
     </style>
 </head>
+
 <body class="bg-gray-50">
     <!-- Navigation -->
     <nav class="fixed w-full bg-white shadow-sm z-50">
@@ -114,10 +119,10 @@
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#home" class="text-gray-700 hover:text-blue-600 transition">Home</a>
-                    <a href="#about" class="text-gray-700 hover:text-blue-600 transition">Sobre</a>
+                    <a href="#sobre" class="text-gray-700 hover:text-blue-600 transition">Sobre</a>
                     <a href="#skills" class="text-gray-700 hover:text-blue-600 transition">Skills</a>
-                    <a href="#projects" class="text-gray-700 hover:text-blue-600 transition">Projetos</a>
-                    <a href="#contact" class="text-gray-700 hover:text-blue-600 transition">Contato</a>
+                    <a href="#projetos" class="text-gray-700 hover:text-blue-600 transition">Projetos</a>
+                    <a href="#contato" class="text-gray-700 hover:text-blue-600 transition">Contato</a>
                 </div>
                 <div class="md:hidden flex items-center">
                     <button id="menu-btn" class="text-gray-700">
@@ -129,10 +134,10 @@
         <!-- Mobile menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white py-2 px-4 shadow-lg">
             <a href="#home" class="block py-2 text-gray-700 hover:text-blue-600 transition">Home</a>
-            <a href="#about" class="block py-2 text-gray-700 hover:text-blue-600 transition">Sobre</a>
+            <a href="#sobre" class="block py-2 text-gray-700 hover:text-blue-600 transition">Sobre</a>
             <a href="#skills" class="block py-2 text-gray-700 hover:text-blue-600 transition">Skills</a>
-            <a href="#projects" class="block py-2 text-gray-700 hover:text-blue-600 transition">Projetos</a>
-            <a href="#contact" class="block py-2 text-gray-700 hover:text-blue-600 transition">Contatos</a>
+            <a href="#projetos" class="block py-2 text-gray-700 hover:text-blue-600 transition">Projetos</a>
+            <a href="#contato" class="block py-2 text-gray-700 hover:text-blue-600 transition">Contato</a>
         </div>
     </nav>
 
@@ -144,18 +149,18 @@
                     <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
                         Oi, Eu sou <span class="gradient-text">Ramiro Sousa</span>
                     </h1>
-                    <div class="typewriter text-2xl md:text-3xl mb-6">
-                        Analista de Suporte e Redes
+                    <div class="text-2xl md:text-3xl mb-6 h-10">
+                        <span class="typed" style="white-space:pre"></span>
                     </div>
                     <p class="text-lg md:text-xl text-gray-300 mb-8">
-                        Com mais de 10 anos com suporte técnico e redes, sou apaixonado por resolver problemas.
+                        Com mais de 10 anos com suporte técnico e redes, sou apaixonado por resolver problemas e tecnologia.
                     </p>
                     <div class="flex space-x-4">
-                        <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition">
-                            Contace me
+                        <a href="#contato" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition transform hover:scale-105">
+                            Contate-me
                         </a>
-                        <a href="#projects" class="border border-blue-600 text-blue-400 hover:bg-blue-600 hover:text-white px-6 py-3 rounded-lg font-medium transition">
-                            Ver trabalhos       
+                        <a href="#projetos" class="border border-blue-600 text-blue-400 hover:bg-blue-600 hover:text-white px-6 py-3 rounded-lg font-medium transition transform hover:scale-105">
+                            Ver projetos       
                         </a>
                     </div>
                 </div>
@@ -163,7 +168,7 @@
                     <div class="relative w-64 h-64 md:w-80 md:h-80">
                         <div class="absolute inset-0 bg-blue-500 rounded-full opacity-20 blur-xl"></div>
                         <img src="img/render.png" 
-                             alt="Developer" 
+                             alt="Foto de perfil de Ramiro Sousa - Analista de Suporte e Redes" 
                              class="relative w-full h-full rounded-full object-cover border-4 border-blue-500 floating">
                     </div>
                 </div>
@@ -172,7 +177,7 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
+    <section id="sobre" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Sobre <span class="gradient-text">mim</span></h2>
@@ -184,7 +189,7 @@
                     <div class="relative w-64 h-64">
                         <div class="absolute -inset-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg blur opacity-75"></div>
                         <img src="img/foto.jpg" 
-                             alt="Ramiro" 
+                             alt="Ramiro Sousa" 
                              class="relative w-full h-full rounded-lg object-cover">
                     </div>
                 </div>
@@ -222,7 +227,7 @@
                         <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium transition flex items-center">
                             <i class="fas fa-download mr-2"></i> Download CV
                         </a>
-                        <a href="#contact" class="border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-6 py-2 rounded-lg font-medium transition flex items-center">
+                        <a href="#contato" class="border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-6 py-2 rounded-lg font-medium transition flex items-center">
                             <i class="fas fa-paper-plane mr-2"></i> Me contate
                         </a>
                     </div>
@@ -243,7 +248,7 @@
                 <!-- Technical Skills -->
                 <div class="bg-white p-8 rounded-xl shadow-md card-hover">
                     <h3 class="text-2xl font-bold mb-6 flex items-center">
-                        <i class="fas fa-code text-blue-500 mr-3"></i> Skills Tecnicas
+                        <i class="fas fa-code text-blue-500 mr-3"></i> Hard Skills
                     </h3>
                     
                     <div class="space-y-6">
@@ -302,7 +307,7 @@
                 <!-- Professional Skills -->
                 <div class="bg-white p-8 rounded-xl shadow-md card-hover">
                     <h3 class="text-2xl font-bold mb-6 flex items-center">
-                        <i class="fas fa-chart-line text-purple-500 mr-3"></i> Habilidades Profissionais
+                        <i class="fas fa-chart-line text-purple-500 mr-3"></i> Soft Skills
                     </h3>
                     
                     <div class="space-y-6">
@@ -319,10 +324,10 @@
                         <div>
                             <div class="flex justify-between mb-2">
                                 <span class="font-medium">Colaboração em Equipe</span>
-                                <span class="text-gray-600">90%</span>
+                                <span class="text-gray-600">80%</span>
                             </div>
                             <div class="skill-bar">
-                                <div class="skill-progress" style="width: 90%"></div>
+                                <div class="skill-progress" style="width: 80%"></div>
                             </div>
                         </div>
                         
@@ -339,20 +344,20 @@
                         <div>
                             <div class="flex justify-between mb-2">
                                 <span class="font-medium">Gerenciamento de Projetos</span>
-                                <span class="text-gray-600">65%</span>
+                                <span class="text-gray-600">35%</span>
                             </div>
                             <div class="skill-bar">
-                                <div class="skill-progress" style="width: 65%"></div>
+                                <div class="skill-progress" style="width: 35%"></div>
                             </div>
                         </div>
                         
                         <div>
                             <div class="flex justify-between mb-2">
                                 <span class="font-medium">Desenvolvimento Agil</span>
-                                <span class="text-gray-600">30%</span>
+                                <span class="text-gray-600">20%</span>
                             </div>
                             <div class="skill-bar">
-                                <div class="skill-progress" style="width: 30%"></div>
+                                <div class="skill-progress" style="width: 20%"></div>
                             </div>
                         </div>
                     </div>
@@ -360,68 +365,66 @@
             </div>
             
             <!-- Tech Stack -->
-        <div class="mt-16">
-  <h3 class="text-2xl font-bold mb-8 text-center">Pilha de conhecimento</h3>
-  <div class="flex flex-wrap justify-center gap-6">
-    
-    <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm w-24 h-24 card-hover">
-      <i class="fas fa-network-wired text-blue-600 text-4xl mb-2"></i>
-      <span class="text-sm">Redes</span>
-    </div>
-    
-    <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm w-24 h-24 card-hover">
-      <i class="fas fa-wifi text-blue-400 text-4xl mb-2"></i>
-      <span class="text-sm">Wi-Fi</span>
-    </div>
-    
-    <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm w-24 h-24 card-hover">
-      <i class="fas fa-tools text-gray-700 text-4xl mb-2"></i>
-      <span class="text-sm">Suporte</span>
-    </div>
-    
-    <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm w-24 h-24 card-hover">
-      <i class="fas fa-shield-alt text-red-500 text-4xl mb-2"></i>
-      <span class="text-sm">Segurança</span>
-    </div>
-    
-    <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm w-24 h-24 card-hover">
-      <i class="fab fa-html5 text-orange-600 text-4xl mb-2"></i>
-      <span class="text-sm">HTML</span>
-    </div>
-    
-    <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm w-24 h-24 card-hover">
-      <i class="fab fa-css3-alt text-blue-500 text-4xl mb-2"></i>
-      <span class="text-sm">CSS</span>
-    </div>
-    
-    <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm w-24 h-24 card-hover">
-      <i class="fab fa-python text-blue-700 text-4xl mb-2"></i>
-      <span class="text-sm">Python</span>
-    </div>
-    
-    <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm w-24 h-24 card-hover">
-      <i class="fab fa-aws text-orange-500 text-4xl mb-2"></i>
-      <span class="text-sm">AWS</span>
-    </div>
-    
-    <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm w-24 h-24 card-hover">
-      <i class="fas fa-robot text-purple-600 text-4xl mb-2"></i>
-      <span class="text-sm">AI</span>
-    </div>
-    
-    <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm w-24 h-24 card-hover">
-      <i class="fas fa-paint-brush text-pink-500 text-4xl mb-2"></i>
-      <span class="text-sm">CorelDRAW / Designer</span>
-    </div>
-    
-   
-
-  </div>
-</div>
-
+            <div class="mt-16">
+                <h3 class="text-2xl font-bold mb-8 text-center">Pilha de conhecimento</h3>
+                <div class="flex flex-wrap justify-center gap-6">
+                    
+                    <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm w-24 h-24 card-hover">
+                        <i class="fas fa-network-wired text-blue-600 text-4xl mb-2"></i>
+                        <span class="text-sm">Redes</span>
+                    </div>
+                    
+                    <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm w-24 h-24 card-hover">
+                        <i class="fas fa-wifi text-blue-400 text-4xl mb-2"></i>
+                        <span class="text-sm">Wi-Fi</span>
+                    </div>
+                    
+                    <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm w-24 h-24 card-hover">
+                        <i class="fas fa-tools text-gray-700 text-4xl mb-2"></i>
+                        <span class="text-sm">Suporte</span>
+                    </div>
+                    
+                    <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm w-24 h-24 card-hover">
+                        <i class="fas fa-shield-alt text-red-500 text-4xl mb-2"></i>
+                        <span class="text-sm">Segurança</span>
+                    </div>
+                    
+                    <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm w-24 h-24 card-hover">
+                        <i class="fab fa-html5 text-orange-600 text-4xl mb-2"></i>
+                        <span class="text-sm">HTML</span>
+                    </div>
+                    
+                    <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm w-24 h-24 card-hover">
+                        <i class="fab fa-css3-alt text-blue-500 text-4xl mb-2"></i>
+                        <span class="text-sm">CSS</span>
+                    </div>
+                    
+                    <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm w-24 h-24 card-hover">
+                        <i class="fab fa-python text-blue-700 text-4xl mb-2"></i>
+                        <span class="text-sm">Python</span>
+                    </div>
+                    
+                    <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm w-24 h-24 card-hover">
+                        <i class="fab fa-aws text-orange-500 text-4xl mb-2"></i>
+                        <span class="text-sm">AWS</span>
+                    </div>
+                    
+                    <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm w-24 h-24 card-hover">
+                        <i class="fas fa-robot text-purple-600 text-4xl mb-2"></i>
+                        <span class="text-sm">AI</span>
+                    </div>
+                    
+                    <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm w-24 h-24 card-hover">
+                        <i class="fas fa-paint-brush text-pink-500 text-4xl mb-2"></i>
+                        <span class="text-sm">CorelDRAW / Designer</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-white">
+    <section id="projetos" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Meus <span class="gradient-text">Projetos</span></h2>
@@ -448,7 +451,7 @@
                             <h3 class="text-xl font-bold mb-4 text-center">Portfolio Website</h3>
                             <p class="text-center mb-6">Portfólio pessoal desenvolvido com HTML5, CSS3, com layout limpo, moderno e responsivo.</p>
                             <div class="flex space-x-4">
-                                                     </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -465,13 +468,13 @@
                             <div class="mt-auto flex flex-wrap gap-2">
                                 <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">CorelDRAW</span>
                                 <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Canva</span>
-                                                        </div>
+                            </div>
                         </div>
                         <div class="project-back bg-gradient-to-br from-purple-600 to-pink-600 p-6 rounded-xl h-full flex flex-col justify-center items-center text-white">
                             <h3 class="text-xl font-bold mb-4 text-center">Serviços Gráficos</h3>
                             <p class="text-center mb-6">Artes, cartões, panfletos, templates, camisas, gravações.</p>
                             <div class="flex space-x-4">
-                                                        </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -495,7 +498,6 @@
                             <h3 class="text-xl font-bold mb-4 text-center">Suporte Personalizado</h3>
                             <p class="text-center mb-6">Acesso remoto, consultoria, redes, AI e treinamentos.</p>
                             <div class="flex space-x-4">
-                               
                             </div>
                         </div>
                     </div>
@@ -504,7 +506,7 @@
             
             <div class="text-center mt-12">
                 <a href="#" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 transition">
-                    View All Projects
+                    Projetos
                     <i class="fas fa-arrow-right ml-2"></i>
                 </a>
             </div>
@@ -515,7 +517,7 @@
     <section class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Minhas<span class="gradient-text"> Experiencias</span></h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Minhas<span class="gradient-text"> Experiências</span></h2>
                 <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
             </div>
             
@@ -527,7 +529,7 @@
                      <!-- Experience 1 -->
                      <div class="flex flex-col md:flex-row mb-12">
                         <div class="md:w-1/2 md:pr-12 mb-6 md:mb-0 text-right">
-                            <h3 class="text-xl font-bold">Analista de suporte Jr</h3>
+                            <h3 class="text-xl font-bold">Analista de Suporte Jr</h3>
                             <p class="text-blue-600">Stefanini Group</p>
                             <p class="text-gray-500">Abr/2025 - Atualmente </p>
                         </div>
@@ -557,7 +559,7 @@
                                 <li>Manutenção de computadores e impressoras, garantindo a disponibilidade dos equipamentos para os usuários.</li>
                                 <li>Controle e reposição de materiais de informática, assegurando a continuidade das operações de TI.</li>
                                 <li>Implantação e suporte sistema interno.</li>
-                                <li>Criação de  </li>
+                                <li>Controle e politicas de acesso ao sistema interno, criação de emails</li>
                                 <li>Controle e reposição de materiais de informática, assegurando a continuidade das operações de TI.</li>
                            
                             </ul>
@@ -568,7 +570,7 @@
                     </div>
                     <div class="md:w-1/2 md:pl-12 mb-6 md:mb-0 text-left order-first md:order-last">
                         <h3 class="text-xl font-bold">Assistente de TI</h3>
-                        <p class="text-purple-600">GRUPO CET-SEG</p>
+                        <p class="text-purple-600">Grupo CET-SEG</p>
                         <p class="text-gray-500">Dez/2017 - Abr/2025</p>
                     </div>
                 </div>
@@ -576,7 +578,7 @@
                 <!-- Experience 2 -->
                 <div class="flex flex-col md:flex-row mb-12">
                     <div class="md:w-1/2 md:pr-12 mb-6 md:mb-0 text-right">
-                        <h3 class="text-xl font-bold">Analista de suporte N1</h3>
+                        <h3 class="text-xl font-bold">Analista de Suporte N1</h3>
                         <p class="text-blue-600">Sonda IT</p>
                         <p class="text-gray-500">Ago/2015 - Mai/2017 </p>
                     </div>
@@ -613,7 +615,7 @@
                     <div class="md:w-1/2 md:pl-12 mb-6 md:mb-0 text-left order-first md:order-last">
                         <h3 class="text-xl font-bold">Técnico de Suporte N1 </h3>
                         <p class="text-purple-600">Capgemini</p>
-                        <p class="text-gray-500">/Set/2014 - Jul/2015</p>
+                        <p class="text-gray-500">Set/2014 - Jul/2015</p>
                     </div>
                 </div>
                 
@@ -643,7 +645,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white">
+    <section id="contato" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Entre em <span class="gradient-text">Contato</span></h2>
@@ -663,7 +665,7 @@
                                 <i class="fas fa-envelope text-blue-600"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-gray-800">Email</h4>
+                                <h4 class="font-bold text-gray-800">E-mail</h4>
                                 <p class="text-gray-600">mirosk8@hotmail.com</p>
                             </div>
                         </div>
@@ -690,16 +692,146 @@
                     </div>
                     
                     <div class="mt-10">
-                        <h4 class="font-bold text-gray-800 mb-4">Follow Me</h4>
+                        <h4 class="font-bold text-gray-800 mb-4">Sigam-me os bons!</h4>
                         <div class="flex space-x-4">
-                            <a href="https://www.linkedin.com/in/ramirosousa/" class="bg-gray-100 hover:bg-blue-600 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition">
+                            <a href="https://www.linkedin.com/in/ramirosousa/" class="bg-gray-100 hover:bg-blue-600 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition" aria-label="LinkedIn">
                                 <i class="fab fa-linkedin-in text-blue-600 hover:text-white"></i>
                             </a>
-                            <a href="https://github.com/RamiroSousa" class="bg-gray-100 hover:bg-gray-800 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition">
+                            <a href="https://github.com/RamiroSousa" class="bg-gray-100 hover:bg-gray-800 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition" aria-label="GitHub">
                                 <i class="fab fa-github text-gray-800 hover:text-white"></i>
                             </a>
-                            <a href="https://www.instagram.com/ramiro_bir_network/" class="bg-gray-100 hover:bg-blue-400 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition">
+                            <a href="https://www.instagram.com/ramiro_bir_network/" class="bg-gray-100 hover:bg-blue-400 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition" aria-label="Instagram">
                                 <i class="fab fa-instagram text-blue-400 hover:text-white"></i>
                             </a>
-                        
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                  <form action="https://formsubmit.co/mirosk8@hotmail.com" method="POST" class="bg-gray-50 p-8 rounded-xl shadow-sm">
+    <!-- Assunto do e-mail -->
+    <input type="hidden" name="_subject" value="Novo contato do portfólio!">
+    
+    <!-- Página de redirecionamento após envio -->
+    <input type="hidden" name="_next" value="obrigado.html">
+    
+        <!-- Configuração anti-spam -->
+    <input type="hidden" name="_captcha" value="false">
+    
+    <!-- Seus campos atuais permanecem iguais -->
+    <div class="mb-6">
+        <label for="name" class="block text-gray-700 font-medium mb-2">Seu Nome</label>
+        <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Digite seu nome">
+    </div>
+    
+    <div class="mb-6">
+        <label for="email" class="block text-gray-700 font-medium mb-2">Seu Email</label>
+        <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Digite seu email">
+    </div>
+    
+    <div class="mb-6">
+        <label for="subject" class="block text-gray-700 font-medium mb-2">Assunto</label>
+        <input type="text" id="subject" name="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Qual o assunto?">
+    </div>
+    
+    <div class="mb-6">
+        <label for="message" class="block text-gray-700 font-medium mb-2">Sua Mensagem</label>
+        <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Digite sua mensagem"></textarea>
+    </div>
+    
+    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg transition transform hover:scale-105">
+        Enviar Mensagem
+    </button>
+</form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <span class="text-xl font-bold gradient-text">Ramiro Sousa</span>
+                    <p class="text-gray-400 mt-2">Analista de Suporte e Redes</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="https://www.linkedin.com/in/ramirosousa/" class="text-gray-400 hover:text-white transition" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in text-2xl"></i>
+                    </a>
+                    <a href="https://github.com/RamiroSousa" class="text-gray-400 hover:text-white transition" aria-label="GitHub">
+                        <i class="fab fa-github text-2xl"></i>
+                    </a>
+                    <a href="https://www.instagram.com/ramiro_bir_network/" class="text-gray-400 hover:text-white transition" aria-label="Instagram">
+                        <i class="fab fa-instagram text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 @RamiroSousa.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            menuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Typed.js initialization
+            new Typed('.typed', {
+                strings: [
+                    'Analista de Suporte^1000',
+                    'Analista de Redes^1000',
+                    'Apaixonado por Tecnologia^1000'
+                ],
+                typeSpeed: 60,
+                backSpeed: 40,
+                backDelay: 1000,
+                startDelay: 500,
+                loop: true,
+                smartBackspace: true,
+                showCursor: true,
+                cursorChar: '|',
+                autoInsertCss: true,
+                onStringTyped: (arrayPos, self) => {
+                    const cursor = document.querySelector('.typed-cursor');
+                    if (cursor) {
+                        const textHeight = document.querySelector('.typed').offsetHeight;
+                        cursor.style.fontSize = textHeight + 'px';
+                        cursor.style.lineHeight = textHeight + 'px';
+                    }
+                }
+            });
+            
+            // Animate skill bars on scroll
+            const skillBars = document.querySelectorAll('.skill-progress');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const width = entry.target.style.width;
+                        entry.target.style.width = '0';
+                        setTimeout(() => {
+                            entry.target.style.width = width;
+                        }, 100);
+                    }
+                });
+            }, {threshold: 0.5});
+            
+            skillBars.forEach(bar => {
+                observer.observe(bar);
+            });
+        });
+    </script>
+</body>
 </html>
